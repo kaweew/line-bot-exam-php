@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			if (0 == strcasecmp($event['message']['text'], 'id')) {
-				$text = 'Your ID is' . $event['source']['userId'];
+				$text = 'Your ID is ' . $event['source']['userId'];
 			}
 			else {
 				$text = $event['message']['text'] . " จ๊ะ";
