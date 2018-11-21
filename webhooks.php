@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			if ($event['message']['text'] == 'id') {
+			if (0 == strcasecmp($event['message']['text'], 'id')) {
 				$text = 'Your ID is' . $event['source']['userId'];
 			}
 			else {
