@@ -9,8 +9,8 @@ $multicastPushIDs = array(
 
 // Get POST body content
 $content = file_get_contents('php://input');
-//echo $content;
-echo "0";
+echo $content;
+
 // Parse JSON
 //$events = json_decode($content, true);
 /*
