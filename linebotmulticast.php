@@ -22,7 +22,7 @@ echo "\r\n----- event 1 -----\r\n";
         // Reply only when message sent is in 'text' format
 var_dump($event);
 echo "\r\n----- End Var Dump -----\r\n";
-	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+        if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 echo "\r\n----- match message -----\r\n";
             // Get Source Device
             $source = $event['source'];
