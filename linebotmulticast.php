@@ -14,15 +14,17 @@ echo $content;
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get Source Device
+echo "----- \r\nevent dont be null -----\r\n";
+    // Loop through each event
+    foreach ($events['events'] as $event) {
+echo "----- \r\nevent 1 -----\r\n";
+        // Reply only when message sent is in 'text' format
+	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+            // Get Source Device
             $source = $event['source'];
             // Get text sent
-			$text = $event['message']['text'];
-			// Make a POST Request to Messaging API to reply to sender
+            $text = $event['message']['text'];
+            // Make a POST Request to Messaging API to reply to sender
             $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
             $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
@@ -31,8 +33,8 @@ if (!is_null($events['events'])) {
             $response = $bot->multicast($multicastPushIDs, $textMessageBuilder);
 
             echo $response->getHTTPStatus() . ' ' . $response->getRawBody() . "\r\n";
-		}
-	}
+        }
+    }
 }
 //echo "OK";
 /*
