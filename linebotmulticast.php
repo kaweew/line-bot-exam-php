@@ -14,12 +14,13 @@ echo $content;
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
-echo "----- \r\nevent dont be null -----\r\n";
+echo "\r\n----- event dont be null -----\r\n";
     // Loop through each event
     foreach ($events['events'] as $event) {
-echo "----- \r\nevent 1 -----\r\n";
+echo "\r\n----- event 1 -----\r\n";
         // Reply only when message sent is in 'text' format
 	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+echo "\r\n----- match message -----\r\n";
             // Get Source Device
             $source = $event['source'];
             // Get text sent
