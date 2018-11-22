@@ -40,10 +40,10 @@ if (!is_null($events['events'])) {
                     $text = "No Room ID information.";
                 }
             }
-        }
-        else {
-            $text = $event['message']['text'] . " จ๊ะ";
-        }
+            else {
+                $text = $event['message']['text'] . " จ๊ะ";
+            }
+        } // End Message Type is Text
         // Get replyToken
         $replyToken = $event['replyToken'];
 
