@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get text sent
             if (0 == strcasecmp($event['message']['text'], 'id')) {
-                if(isset($event['source']['room']){
+                if(isset($event['source']['userId']){
                     $text = 'Your ID is ' . $event['source']['userId'];
                 }
                 else {
@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
                 }
             }
             else if (0 == strcasecmp($event['message']['text'], 'group')) {
-                if(isset($event['source']['room']){
+                if(isset($event['source']['groupId']){
                     $text = 'Group ID is ' . $event['source']['groupId'];
                 }
                 else {
@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
                 }
             }
             else if (0 == strcasecmp($event['message']['text'], 'room')) {
-                if(isset($event['source']['groupId']){
+                if(isset($event['source']['room']){
                     $text = 'Room ID is ' . $event['source']['room'];
                 }
                 else {
