@@ -36,6 +36,6 @@ echo "----- \r\nevent 1 -----\r\n";
         }
     }
 }
-//echo "OK";
-/*
-*/
+else {
+    echo "Cannot Parse Data";
+}
